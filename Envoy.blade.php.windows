@@ -1,0 +1,69 @@
+vervang USERNAME met jouw clow gebruikersnaam en verwijder .windows in dit bestand
+
+@servers(['web' => 'USERNAME@adsd2019.clow.nl'])
+
+@setup
+    $gitUrl = 'ictwf@vs-ssh.visualstudio.com:v3/ictwf/2019_ADSD_Project_Frameworks_Team_01/scrumapp';
+    $branch = (!empty($branch)) ? $branch : 'development';
+    $path   = '/home/USERNAME/public_html/scrumapp';
+@endsetup
+
+@task('deploy:cold')
+    cd {{ $path }}
+    git init
+    git remote add origin {{ $gitUrl }}
+    git pull origin {{ $branch }}
+
+    composer install
+    npm install
+
+    php artisan storage:link
+
+    php artisan migrate
+
+    chown USERNAME:www-data -R .
+    chmod 775 -R .
+@endtask
+
+@task('deploy')
+    cd {{ $path }}
+    git pull origin {{ $branch }}
+
+    composer install
+    npm install
+
+    php artisan storage:link
+
+    php artisan migrate
+
+    chown USERNAME:www-data -R .
+    chmod 775 -R .
+@endtask
+
+@task('git:init')
+    cd {{ $path }}
+    git init
+    git remote add origin {{ $gitUrl }}
+    git pull origin {{ $branch }}
+@endtask
+
+@task('git:update')
+    cd {{ $path }}
+    git pull origin {{ $branch }}
+@endtask
+
+@task('lib:install')
+    cd {{ $path }}
+    composer install
+    npm install
+@endtask
+
+@task('storage:link')
+    cd {{ $path }}
+    php artisan storage:link
+@endtask
+
+@task('migrate')
+    cd {{ $path }}
+    php artisan migrate:fresh
+@endtask

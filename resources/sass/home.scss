@@ -1,0 +1,155 @@
+@import "variables";
+.banner {
+    background-color: #fdb000;
+    height: 600px;
+
+    .banner-inner {
+        padding: 80px 0 50px 0;
+    }
+
+    .banner-btn {
+        display: flex;
+        margin-top: 30px;
+        align-content: center;
+
+        button {
+            display: block;
+            margin: 0 auto;
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: .25rem;
+            text-decoration: none;
+            outline: none;
+            color: white;
+        }
+
+        button:hover {
+            background-color: white;
+            text-decoration: none;
+            color: #fdb000;
+        }
+    }
+}
+
+.banner-img {
+    margin-top: -20%;
+
+
+    img {
+        width: 65%;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.container {
+    .container-inner {
+        margin-top: 50px;
+        margin-bottom: 50px;
+
+        .intro {
+            margin-bottom: 50px;
+        }
+
+        .card {
+            display: flex;
+            box-shadow: black;
+            margin: 20px 0;
+            height: auto;
+
+            .card-body {
+                padding: 1.25rem 0 0 0;
+
+                img {
+                    height: 50px;
+                    object-fit: cover;
+                    display: block;
+                    margin: 20px auto;
+                }
+
+                h2 {
+                    padding: 0 1.25rem;
+                }
+
+                p {
+                    padding: 0 1.25rem;
+                }
+
+                button {
+                    font-size: 20px;
+                    width: 100%;
+                    background-color: #fdb000;
+                    color: white;
+                    border: transparent;
+                }
+
+            }
+        }
+    }
+}
+
+
+.c2a {
+    display: flex;
+
+}
+
+.c2a-inner {
+    position: absolute;
+    max-width: 100%;
+}
+
+.c2a-btn {
+    display: flex;
+    margin-top: 30px;
+    align-content: center;
+
+    button {
+        display: block;
+        margin: 0 auto;
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: .25rem;
+        text-decoration: none;
+        outline-color: transparent;
+        color: white;
+    }
+
+    button:hover {
+        background-color: white;
+        text-decoration: none;
+        color: #fdb000;
+    }
+}
+
+
+
+#foto1 {
+    background-image: url($prefix + "/storage/img/11.png");
+    height: 40vh;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 80px auto 0 auto;
+}
+
+.container {
+    .scrum-items {
+        margin-bottom: 25px;
+    }
+
+    .col-6 {
+        margin-bottom: 50px;
+    }
+}
+
+.container-fluid {
+    margin-top: 80px;
+}

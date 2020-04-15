@@ -1,0 +1,51 @@
+@servers(['web' => 'jasper@adsd2019.clow.nl'])
+
+@setup
+    $gitUrl = 'ictwf@vs-ssh.visualstudio.com:v3/ictwf/2019_ADSD_Project_Frameworks_Team_01/scrumapp';
+    $branch = (!empty($branch)) ? $branch : 'master';
+    $basePath = '/home/jasper/public_html/scrumapp';
+@endsetup
+
+@story('deploy:cold')
+    git:init
+    lib:install
+    storage:link
+    migrate
+@endstory
+
+@story('deploy')
+    git:update
+    lib:install
+    storage:link
+    migrate
+    chown jasper:www-data -R .
+    chmod 775 -R .
+@endstory
+
+@task('git:init')
+    cd {{ $basePath }}
+    git init
+    git remote add origin {{ $gitUrl }}
+    git pull origin {{ $branch }}
+@endtask
+
+@task('git:update')
+    cd {{ $basePath }}
+    git pull origin {{ $branch }}
+@endtask
+
+@task('lib:install')
+    cd {{ $basePath }}
+    composer install
+    npm install
+@endtask
+
+@task('storage:link')
+    cd {{ $basePath }}
+    php artisan storage:link
+@endtask
+
+@task('migrate')
+    cd {{ $basePath }}
+    php artisan migrate
+@endtask
