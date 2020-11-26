@@ -1,7 +1,14 @@
 # Scrumapp
 
->Admin Login Scrumapp Team1C:
+# Introduction
+An online Scrum environment, developed in PHP with the Laravel framework.
 
-Email: s.hoeksema@windesheim.nl
+# Technologies
+Scrumapp was made with the Laravel framework. The frontend consists of Bootstrap and custom css.
 
-Wachtwoord: Stephan1234
+# Login
+    Email: s.hoeksema@windesheim.nl
+    Password: Stephan1234
+
+# Contribution
+Made by Annemarieke van Veen, Mike Bulte, Menno Vreman and Jasper Agelink. All rights reserved.
