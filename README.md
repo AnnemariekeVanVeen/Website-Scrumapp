@@ -1,14 +1,14 @@
 # Scrumapp
 
-# Introduction
+## Introduction
 An online Scrum environment, developed in PHP with the Laravel framework.
 
-# Technologies
+## Technologies
 Scrumapp was made with the Laravel framework. The frontend consists of Bootstrap and custom css.
 
-# Login
+## Login
     Email: s.hoeksema@windesheim.nl
     Password: Stephan1234
 
-# Contribution
+## Contribution
 Made by Annemarieke van Veen, Mike Bulte, Menno Vreman and Jasper Agelink. All rights reserved.
